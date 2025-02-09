@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน่วยวัดอุณหภูมิ</title>
+    <link rel="stylesheet" href="Exam.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>แปลงหน่วยอุณหภูมิ</h1>
+
+    <label for="temp">กรุณากรอกอุณหภูมิ (°C): </label>
+    <input type="number" id="temp" placeholder="ใส่อุณหภูมิ" />
+    <button onclick="convertTemperature()">แปลง</button>
+
+    <p id="result"></p>
+
+    <script>
+        function convertTemperature() {
+            var celsius = document.getElementById("temp").value;
+            if (celsius === "") {
+                document.getElementById("result").innerHTML = "กรุณากรอกอุณหภูมิ!";
+                return;
+            }
+
+            var fahrenheit = (celsius * 9/5) + 32;
+            var result = "อุณหภูมิ " + celsius + "°C เท่ากับ " + fahrenheit.toFixed(2) + "°F";
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>
